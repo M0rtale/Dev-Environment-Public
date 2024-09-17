@@ -19,7 +19,6 @@ sudo gem install seccomp-tools
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-sed -i '/^plugins=(/ s/$/ zsh-autosuggestions/' ~/.zshrc && echo "" >> ~/.zshrc
+echo "plugins+=(zsh-autosuggestions)" >> ~/.zshrc
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-sed -i '/^plugins=(/ s/$/ zsh-syntax-highlighting/' ~/.zshrc && echo "" >> ~/.zshrc
-
+echo "plugins+=(zsh-syntax-highlighting)" >> ~/.zshrc
