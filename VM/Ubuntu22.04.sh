@@ -5,6 +5,13 @@ sudo apt-get install ipython3 -y
 sudo apt-get install gcc-multilib -y
 # install pwntools
 pip3 install pwntools
+# install some plugin
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+echo "plugins+=(zsh-autosuggestions)" >> ~/.zshrc
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+echo "plugins+=(zsh-syntax-highlighting)" >> ~/.zshrc
 # install on-my-zsh   
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # install peda pwngdb
@@ -16,9 +23,4 @@ cp ~/Pwngdb/.gdbinit ~/
 sudo apt install gem ruby ruby-dev -y
 sudo gem install one_gadget
 sudo gem install seccomp-tools
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-echo "plugins+=(zsh-autosuggestions)" >> ~/.zshrc
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-echo "plugins+=(zsh-syntax-highlighting)" >> ~/.zshrc
+
