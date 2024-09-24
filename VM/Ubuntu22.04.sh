@@ -23,5 +23,5 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo "plugins+=(zsh-autosuggestions)" >> ~/.zshrc
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 echo "plugins+=(zsh-syntax-highlighting)" >> ~/.zshrc
-echo "source $ZSH/oh-my-zsh.sh" >> ~/.zshrc
+echo "source \$ZSH/oh-my-zsh.sh" >> ~/.zshrc
 
